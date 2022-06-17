@@ -60,99 +60,80 @@ public class Main extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        crear_archivos.getContentPane().setLayout(null);
+        crear_archivos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Crear Archivos ");
-        crear_archivos.getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre");
-        crear_archivos.getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 0, 0);
-        crear_archivos.getContentPane().add(jTextField1);
-        jTextField1.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        crear_archivos.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 310, 30));
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Extension");
-        crear_archivos.getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jComboBox1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PDF", "txt", "docx", "jpg", "mp4" }));
-        crear_archivos.getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 260, 30));
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tamaño: ");
-        crear_archivos.getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         jSpinner1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        crear_archivos.getContentPane().add(jSpinner1);
-        jSpinner1.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, -1));
 
         jButton1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jButton1.setText("Crear");
-        crear_archivos.getContentPane().add(jButton1);
-        jButton1.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 140, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/blue-vortex-3d_1920x1080_xtrafondos.com.jpg"))); // NOI18N
-        crear_archivos.getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 0, 0);
+        crear_archivos.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 370));
 
-        crear_carpeta.getContentPane().setLayout(null);
+        crear_carpeta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Crear carpeta");
-        crear_carpeta.getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 0, 0);
+        crear_carpeta.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre de la carpeta: ");
-        crear_carpeta.getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 0, 0);
-        crear_carpeta.getContentPane().add(jTextField2);
-        jTextField2.setBounds(0, 0, 0, 0);
+        crear_carpeta.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
+        crear_carpeta.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 290, 30));
 
         jButton2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jButton2.setText("Crear");
-        crear_carpeta.getContentPane().add(jButton2);
-        jButton2.setBounds(0, 0, 0, 0);
+        crear_carpeta.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 150, 50));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1366_2000.png"))); // NOI18N
-        crear_carpeta.getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 0, 0);
+        crear_carpeta.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 370));
 
         popupMenu2.setLabel("popupMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(80, 60, 670, 320);
-        getContentPane().add(jProgressBar1);
-        jProgressBar1.setBounds(100, 10, 620, 40);
-        getContentPane().add(jProgressBar2);
-        jProgressBar2.setBounds(40, 400, 740, 40);
-        getContentPane().add(jProgressBar3);
-        jProgressBar3.setBounds(40, 460, 740, 30);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 670, 320));
+        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 620, 40));
+        getContentPane().add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 740, 40));
+        getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 740, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/9988.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 820, 520);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 520));
 
         jMenu1.setText("Archivos");
 
