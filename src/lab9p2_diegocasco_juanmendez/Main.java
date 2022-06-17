@@ -5,6 +5,8 @@
  */
 package lab9p2_diegocasco_juanmendez;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dcasc
@@ -266,4 +268,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private java.awt.PopupMenu popupMenu2;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Carpeta> miusuario = new ArrayList();
+    ArrayList<Carpeta> destacado = new ArrayList();
+    ArrayList<Carpeta> papelera = new ArrayList();
+
 }
