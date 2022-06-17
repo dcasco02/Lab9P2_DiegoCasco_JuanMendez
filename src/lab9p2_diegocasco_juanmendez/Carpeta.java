@@ -59,7 +59,7 @@ public class Carpeta {
 
     @Override
     public String toString() {
-        return "Carpeta{" + "nombre=" + nombre + ", link=" + link + ", carpetas=" + carpetas + ", archivo=" + archivo + '}';
+        return carpetas + nombre   ;
     }
     
 }
