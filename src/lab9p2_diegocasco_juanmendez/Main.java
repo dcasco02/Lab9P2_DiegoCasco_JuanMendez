@@ -131,12 +131,6 @@ public class Main extends javax.swing.JFrame {
 
         popupMenu2.setLabel("popupMenu2");
 
-        PopMenu_Folders.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PopMenu_FoldersMouseClicked(evt);
-            }
-        });
-
         Ag_papelera.setText("Eliminar");
         PopMenu_Folders.add(Ag_papelera);
 
@@ -222,11 +216,6 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1MouseClicked
-
-    private void PopMenu_FoldersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PopMenu_FoldersMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_PopMenu_FoldersMouseClicked
 
     private void jTextArea1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextArea1MouseClicked
         // TODO add your handling code here:
