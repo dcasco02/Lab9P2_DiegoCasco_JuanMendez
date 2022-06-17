@@ -10,6 +10,7 @@ package lab9p2_diegocasco_juanmendez;
  * @author dcasc
  */
 public class Archivos {
+
     private String nombre;
     private String link;
     private String extension;
@@ -59,6 +60,6 @@ public class Archivos {
 
     @Override
     public String toString() {
-        return nombre ;
+        return nombre;
     }
 }
