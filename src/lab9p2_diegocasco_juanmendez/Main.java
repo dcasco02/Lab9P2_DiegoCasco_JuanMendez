@@ -6,6 +6,7 @@
 package lab9p2_diegocasco_juanmendez;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,11 +34,11 @@ public class Main extends javax.swing.JFrame {
         crear_archivos = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cb_extension = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        sp_tam = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         crear_carpeta = new javax.swing.JDialog();
@@ -78,30 +79,35 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre");
         crear_archivos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-        crear_archivos.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 310, 30));
+        crear_archivos.getContentPane().add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 310, 30));
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Extension");
         crear_archivos.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PDF", "txt", "docx", "jpg", "mp4" }));
-        crear_archivos.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 260, 30));
+        cb_extension.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        cb_extension.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PDF", "txt", "docx", "jpg", "mp4" }));
+        crear_archivos.getContentPane().add(cb_extension, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 260, 30));
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tamaño: ");
         crear_archivos.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
-        jSpinner1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        crear_archivos.getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, -1));
+        sp_tam.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        crear_archivos.getContentPane().add(sp_tam, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, -1));
 
         jButton1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jButton1.setText("Crear");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
         crear_archivos.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 140, 50));
@@ -220,7 +226,14 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        
+        String nombre, extension, link;
+        int tamaño;
+        link = "https://help.dropbox.com/es-la/files-folders/share/view-only";
+        nombre = txt_nombre.getText();
+        extension = cb_extension.getSelectedItem().toString();
+        tamaño = (Integer) sp_tam.getValue();
+        archivos.add(new Archivos(nombre,link,extension,tamaño));
+        JOptionPane.showConfirmDialog(this, "Archivo Agregado exitosamente");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void PopMenu_FoldersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PopMenu_FoldersMouseClicked
@@ -234,6 +247,10 @@ public class Main extends javax.swing.JFrame {
             PopMenu_Folders.show(evt.getComponent(),evt.getX() ,evt.getY());
         }
     }//GEN-LAST:event_jTextArea1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,11 +292,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem Ag_miusuario;
     private javax.swing.JMenuItem Ag_papelera;
     private javax.swing.JPopupMenu PopMenu_Folders;
+    private javax.swing.JComboBox<String> cb_extension;
     private javax.swing.JDialog crear_archivos;
     private javax.swing.JDialog crear_carpeta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -302,14 +319,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private java.awt.PopupMenu popupMenu2;
+    private javax.swing.JSpinner sp_tam;
+    private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
     ArrayList<Carpeta> miusuario = new ArrayList();
     ArrayList<Carpeta> destacado = new ArrayList();
     ArrayList<Carpeta> papelera = new ArrayList();
-
+    ArrayList<Archivos> archivos = new ArrayList();
 }
