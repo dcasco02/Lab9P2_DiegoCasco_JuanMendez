@@ -47,6 +47,10 @@ public class Main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         popupMenu2 = new java.awt.PopupMenu();
+        PopMenu_Folders = new javax.swing.JPopupMenu();
+        Ag_papelera = new javax.swing.JMenuItem();
+        Ag_destacados = new javax.swing.JMenuItem();
+        Ag_miusuario = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -127,11 +131,31 @@ public class Main extends javax.swing.JFrame {
 
         popupMenu2.setLabel("popupMenu2");
 
+        PopMenu_Folders.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PopMenu_FoldersMouseClicked(evt);
+            }
+        });
+
+        Ag_papelera.setText("Eliminar");
+        PopMenu_Folders.add(Ag_papelera);
+
+        Ag_destacados.setText("Agregar a Destacados\n");
+        PopMenu_Folders.add(Ag_destacados);
+
+        Ag_miusuario.setText("Agregar a Mi Usuario");
+        PopMenu_Folders.add(Ag_miusuario);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextArea1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 670, 320));
@@ -199,6 +223,18 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void PopMenu_FoldersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PopMenu_FoldersMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_PopMenu_FoldersMouseClicked
+
+    private void jTextArea1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextArea1MouseClicked
+        // TODO add your handling code here:
+        if(evt.isMetaDown()){
+            PopMenu_Folders.show(evt.getComponent(),evt.getX() ,evt.getY());
+        }
+    }//GEN-LAST:event_jTextArea1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +271,10 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Ag_destacados;
+    private javax.swing.JMenuItem Ag_miusuario;
+    private javax.swing.JMenuItem Ag_papelera;
+    private javax.swing.JPopupMenu PopMenu_Folders;
     private javax.swing.JDialog crear_archivos;
     private javax.swing.JDialog crear_carpeta;
     private javax.swing.JButton jButton1;
