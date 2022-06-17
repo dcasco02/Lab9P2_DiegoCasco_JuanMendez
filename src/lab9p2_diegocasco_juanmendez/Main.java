@@ -38,6 +38,13 @@ public class Main extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        crear_carpeta = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        popupMenu2 = new java.awt.PopupMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -91,6 +98,28 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/blue-vortex-3d_1920x1080_xtrafondos.com.jpg"))); // NOI18N
         crear_archivos.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 370));
 
+        crear_carpeta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Crear carpeta");
+        crear_carpeta.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Nombre de la carpeta: ");
+        crear_carpeta.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
+        crear_carpeta.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 290, 30));
+
+        jButton2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jButton2.setText("Crear");
+        crear_carpeta.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 150, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1366_2000.png"))); // NOI18N
+        crear_carpeta.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 370));
+
+        popupMenu2.setLabel("popupMenu2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -104,7 +133,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 740, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/9988.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 520));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 520));
 
         jMenu1.setText("Archivos");
 
@@ -125,6 +154,11 @@ public class Main extends javax.swing.JFrame {
         jMenu3.add(jMenuItem3);
 
         jMenuItem4.setText("Crear carpeta");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
@@ -144,6 +178,14 @@ public class Main extends javax.swing.JFrame {
         crear_archivos.setLocationRelativeTo(this);
         crear_archivos.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        crear_carpeta.setModal(true); // bloquear
+        crear_carpeta.pack();
+        crear_carpeta.setLocationRelativeTo(this);
+        crear_carpeta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +224,9 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog crear_archivos;
+    private javax.swing.JDialog crear_carpeta;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -190,6 +234,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -206,5 +253,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private java.awt.PopupMenu popupMenu2;
     // End of variables declaration//GEN-END:variables
 }
