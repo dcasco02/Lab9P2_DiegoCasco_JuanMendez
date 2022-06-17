@@ -59,6 +59,6 @@ public class Archivos {
 
     @Override
     public String toString() {
-        return "Archivos{" + "nombre=" + nombre + ", link=" + link + ", extension=" + extension + ", tamano=" + tamano + '}';
+        return nombre ;
     }
 }
