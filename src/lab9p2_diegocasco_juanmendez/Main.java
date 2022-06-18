@@ -5,7 +5,10 @@
  */
 package lab9p2_diegocasco_juanmendez;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +23,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
-
+Random r = new Random();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +47,7 @@ public class Main extends javax.swing.JFrame {
         crear_carpeta = new javax.swing.JDialog();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Jt_nombrecarp = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         popupMenu2 = new java.awt.PopupMenu();
@@ -126,10 +129,15 @@ public class Main extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre de la carpeta: ");
         crear_carpeta.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
-        crear_carpeta.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 290, 30));
+        crear_carpeta.getContentPane().add(Jt_nombrecarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 290, 30));
 
         jButton2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jButton2.setText("Crear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         crear_carpeta.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 150, 50));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1366_2000.png"))); // NOI18N
@@ -241,6 +249,44 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String linak;
+        AdminCarpetas ac = new AdminCarpetas("./Carpets.nuils");
+        int z=65+r.nextInt(90);
+        int x=97+r.nextInt(122); 
+        int q =65+r.nextInt(90);
+        int h =97+r.nextInt(122);
+        int p=97+r.nextInt(122); 
+        char a = (char)z;
+        char b = (char)x;
+        char c = (char)q;
+        char d = (char)h;
+        char e = (char)p;
+        linak = "dive.google.com/misuario/"+a+b+c+d+e;
+        System.out.println(linak);
+        miusuario.add(new Carpeta(Jt_nombrecarp.getText(), linak));
+        ac.escribirArchivo();
+        
+        Dba db = new Dba("./lab9p2.accdb");
+        db.conectar();
+        try { 
+            Date hoy;
+            hoy = new Date();
+            String n;
+            int jj;
+            jj=1;
+            n=Jt_nombrecarp.getText();
+            db.query.execute("INSERT INTO Carpetas"
+                    + " (Nombre_Carpeta, Cantidad_Dentro ,Fecha_Creacion)"
+                    + " VALUES ('" + n + "', '" + jj + "','" + hoy + "' )");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,6 +326,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem Ag_destacados;
     private javax.swing.JMenuItem Ag_miusuario;
     private javax.swing.JMenuItem Ag_papelera;
+    private javax.swing.JTextField Jt_nombrecarp;
     private javax.swing.JPopupMenu PopMenu_Folders;
     private javax.swing.JComboBox<String> cb_extension;
     private javax.swing.JDialog crear_archivos;
@@ -309,7 +356,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField2;
     private java.awt.PopupMenu popupMenu2;
     private javax.swing.JSpinner sp_tam;
     private javax.swing.JTextField txt_nombre;
