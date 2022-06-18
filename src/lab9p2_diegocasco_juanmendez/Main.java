@@ -23,6 +23,12 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
+    private void cargartext3(){
+        for (Archivos archivo : archivos) {
+            jTextArea1.append(archivo.getNombre+"\n");
+            
+        }
+    }
 Random r = new Random();
     /**
      * This method is called from within the constructor to initialize the form.
@@ -175,6 +181,11 @@ Random r = new Random();
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 520));
 
         jMenu1.setText("Archivos");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Papelera");
         jMenu1.add(jMenuItem1);
@@ -228,6 +239,7 @@ Random r = new Random();
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        AdminArchivos aa=new AdminArchivos("./Archivos.nuils");
         String nombre, extension, link;
         int tamaño;
         link = "https://help.dropbox.com/es-la/files-folders/share/view-only";
@@ -235,7 +247,26 @@ Random r = new Random();
         extension = cb_extension.getSelectedItem().toString();
         tamaño = (Integer) sp_tam.getValue();
         archivos.add(new Archivos(nombre,link,extension,tamaño));
+        aa.escribirArchivo();
         JOptionPane.showConfirmDialog(this, "Archivo Agregado exitosamente");
+        Dba db = new Dba("./lab9p2.accdb");
+        db.conectar();
+        try { 
+            Date hoy;
+            hoy = new Date();
+            String ul;
+            int jj,n;
+            jj=1;
+            ul= "no";
+            n=0;
+            db.query.execute("INSERT INTO Archivos"
+                    + " (NumArchivo,NombreArchivo ,FechaCreacion,TamanoArchivo,PerteneceCarpeta)"
+                    + " VALUES ('"+n+"','" + nombre + "', '" + hoy + "','" + tamaño + "','"+ul+"' )");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTextArea1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextArea1MouseClicked
@@ -287,6 +318,14 @@ Random r = new Random();
         }
         db.desconectar();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+        c.setModal(true);
+        c.pack();
+        c.setVisible(true);
+                
+    }//GEN-LAST:event_jMenu1ActionPerformed
 
     /**
      * @param args the command line arguments
