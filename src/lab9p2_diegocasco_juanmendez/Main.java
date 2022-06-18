@@ -22,11 +22,15 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        jTextArea1.setEditable(false);
     }
     private void cargartext3(){
         for (Archivos archivo : archivos) {
             jTextArea1.append(archivo.getNombre()+"\n");
             
+        }
+        for (Carpeta carpeta : miusuario) {
+            jTextArea1.append(carpeta.getNombre()+"\n");
         }
     }
 Random r = new Random();
@@ -347,6 +351,7 @@ Random r = new Random();
             ex.printStackTrace();
         }
         db.desconectar();
+        cargartext3();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTextArea1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextArea1MouseClicked
@@ -397,6 +402,7 @@ Random r = new Random();
             ex.printStackTrace();
         }
         db.desconectar();
+        cargartext3();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
