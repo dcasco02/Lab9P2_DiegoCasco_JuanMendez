@@ -273,13 +273,14 @@ Random r = new Random();
         try { 
             Date hoy;
             hoy = new Date();
-            String n;
+            String n,ul;
             int jj;
             jj=1;
+            ul= hoy.toString();
             n=Jt_nombrecarp.getText();
             db.query.execute("INSERT INTO Carpetas"
-                    + " (Nombre_Carpeta, Cantidad_Dentro ,Fecha_Creacion)"
-                    + " VALUES ('" + n + "', '" + jj + "','" + hoy + "' )");
+                    + " (CantidadArchivos ,Fechacreacion,NombreCarpeta)"
+                    + " VALUES ('" + jj + "', '" + ul + "','" + n + "' )");
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
